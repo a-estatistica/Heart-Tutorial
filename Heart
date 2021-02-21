@@ -1,0 +1,9 @@
+dados = data.frame(x = seq(0,2*pi,by=0.1))
+xhrt = function(x){16*sin(x)^3}
+yhrt = function(x)
+  {13*cos(x)-5*cos(2*x)-2*cos(3*x)-cos(4*x)}
+dados$y = yhrt(dados$x)
+dados$z = xhrt(dados$x)
+with(dados,plot(z,y),type="i")
+with(dados,polygon(z,y,col="red"))
+text(0,0,"@_estatistica", col="white")
